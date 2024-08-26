@@ -5,6 +5,6 @@ password ="1234"
 
 decrypted_file = decrypt_func(path,password)
 
-data_frame = pd.read_excel(decrypted_file , engine = 'openpyxl')
+pure_data = extract_actual_data(decrypted_file)
 
-print(data_frame)
+print(pure_data)
