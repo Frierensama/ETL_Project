@@ -45,5 +45,12 @@ def extract_actual_data(file_path):
     else:
         return None  # Or raise an error if header/footer can't be detected
 
+###################           Sorting by Columns           ######################
+
 def sort_by_col(dataframe , col_name , type):
     return dataframe.sort_values(by=[col_name],ascending=type)
+
+##############         Filtering by query                  ######################
+
+def filter_by_query(dataframe , query):
+    return dataframe.query(query)

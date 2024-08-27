@@ -12,4 +12,6 @@ pure_data2 = extract_actual_data(path2)
 
 sorted_pure_data2 = sort_by_col(pure_data2,"Debit Interest",True) # Sort the Data Frame by Column and Ascending sort_by_col
 
-print(pure_data2)
+filtered_pure_data2 = filter_by_query(sorted_pure_data2 , '`Debit Interest` > 20') # if column name has space [Debit Interest] use this symbol[``]
+
+print(filtered_pure_data2)
