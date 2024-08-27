@@ -3,6 +3,8 @@ import msoffcrypto
 from io import BytesIO
 import numpy as np
 
+######################      FOR DECRYPTION          #########################
+
 # Decrypt the file
 def decrypt_func(filepath , password):
     decrypted_file = BytesIO()
@@ -12,6 +14,7 @@ def decrypt_func(filepath , password):
         office_file.decrypt(decrypted_file)
     return decrypted_file
 
+##################### FOR HEADER AND FOOTER EXTRACTION #############################
 
 def detect_header(df):
     # Heuristic to detect header: Find the first row with non-null values
