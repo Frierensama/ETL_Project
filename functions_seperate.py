@@ -44,3 +44,6 @@ def extract_actual_data(file_path):
         return actual_data
     else:
         return None  # Or raise an error if header/footer can't be detected
+
+def sort_by_col(dataframe , col_name , type):
+    return dataframe.sort_values(by=[col_name],ascending=type)
