@@ -64,7 +64,7 @@ def group_rows(dataframe ,colname_to_groupby ,col_groupby_names , col_groupby_fu
     col_names = list(dataframe.columns)
     for x in col_names:
         if(x not in res.keys()):
-            res[x]="first"
+            res[x]="last"
     dataframe = dataframe.groupby(colname_to_groupby).agg(res)
     return dataframe
 

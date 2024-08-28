@@ -16,8 +16,8 @@ filtered_pure_data2 = filter_by_query(sorted_pure_data2 , '`Debit Interest` > 20
 
 #Rows Aggregation -- groupby
 colname_to_groupby = "Currency"
-col_groupby_names = ["Value Date","Net Debit Balance","Debit Interest"]
-col_groupby_funcs = ["first","mean","max"]
+col_groupby_names = ["Debit Interest (USD)","Net Debit Balance","Debit Interest"]
+col_groupby_funcs = ["max","min","mean"]
 
 agg_pure_data2 = group_rows(pure_data , colname_to_groupby ,col_groupby_names , col_groupby_funcs)
 
