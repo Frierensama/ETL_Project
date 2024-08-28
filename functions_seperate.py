@@ -54,3 +54,17 @@ def sort_by_col(dataframe , col_name , type):
 
 def filter_by_query(dataframe , query):
     return dataframe.query(query)
+
+################           Group Records - Groupby          ####################
+def group_rows(dataframe ,colname_to_groupby ,col_groupby_names , col_groupby_funcs ):
+    res = {}
+    for i in range(len(col_groupby_names)):
+        res[col_groupby_names[i]]=col_groupby_funcs[i]
+
+    col_names = list(dataframe.columns)
+    for x in col_names:
+        if(x not in res.keys()):
+            res[x]="first"
+    dataframe = dataframe.groupby(colname_to_groupby).agg(res)
+    return dataframe
+
