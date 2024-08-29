@@ -19,6 +19,12 @@ colname_to_groupby = "Currency"
 col_groupby_names = ["Debit Interest (USD)","Net Debit Balance","Debit Interest"]
 col_groupby_funcs = ["max","min","mean"]
 
-agg_pure_data2 = group_rows(pure_data , colname_to_groupby ,col_groupby_names , col_groupby_funcs)
+agg_pure_data2 = group_rows(pure_data2 , colname_to_groupby ,col_groupby_names , col_groupby_funcs)
 
-print(agg_pure_data2)
+#Derived Column processing - eval
+new_colname = "Global Debit Balance"
+col_operation = "(df['Debit Interest (USD)']-df['Debit Interest'])/df['Net Debit Balance']"
+
+derived_col_added_puredata2 = derive_col(agg_pure_data2 , new_colname , col_operation)
+
+print(derived_col_added_puredata2)

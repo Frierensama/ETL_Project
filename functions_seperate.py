@@ -68,3 +68,7 @@ def group_rows(dataframe ,colname_to_groupby ,col_groupby_names , col_groupby_fu
     dataframe = dataframe.groupby(colname_to_groupby).agg(res)
     return dataframe
 
+##############              Derive Column added to it        #####################
+def derive_col(df , new_colname , col_operation):
+    df[new_colname] = eval(col_operation)
+    return df
